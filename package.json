@@ -1,0 +1,14 @@
+{
+  "name": "webpack-zg-utils",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:dev": "jest --watch",
+    "lint": "eslint src/**.js"
+  },
+  "author": "Mikołaj Kozakiewicz",
+  "license": "MIT"
+}

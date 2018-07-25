@@ -1,0 +1,17 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "no-param-reassign": "off"
+  },
+  "settings": {
+    "import/core-modules": [
+      "glob"
+    ]
+  },
+  "globals": {
+    "describe": false,
+    "it": false,
+    "expect": false,
+    "jest": false,
+  }
+}
