@@ -10,5 +10,16 @@
     "lint": "eslint src/**.js"
   },
   "author": "Mikołaj Kozakiewicz",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^23.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.2.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
 }

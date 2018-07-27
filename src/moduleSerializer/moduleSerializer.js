@@ -1,21 +1,9 @@
 const path = require('path');
 const fs = require('fs');
 
-const splitAssetsByExtension = assets => (
-  assets.reduce((accumulator, asset) => {
-    const fileExtension = asset.split('.').pop();
+const PLUGIN_NAME = moduleSerializer;
 
-    accumulator[fileExtension] ?
-      accumulator[fileExtension].push(asset) :
-      accumulator[fileExtension] = [asset];
-
-    return accumulator;
-  }, {})
-);
-
-const findByExtension = (array, value) => (
-  array.find(element => element.extension === value)
-);
+const { splitAssetsByExtension, findByExtension } = require('../helpers/helpers');
 
 class moduleSerializer {
   constructor(fileMap) {
@@ -23,7 +11,7 @@ class moduleSerializer {
   }
 
   apply(compiler) {
-    compiler.plugin('emit', (compilation, callback) => {
+    compiler.hooks.emit.tap(PLUGIN_NAME, callback) => {
       const assetsMap = splitAssetsByExtension(Object.keys(compilation.assets));
 
       Object.keys(assetsMap).map((assetKey) => {

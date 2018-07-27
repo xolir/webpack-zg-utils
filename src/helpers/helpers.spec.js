@@ -1,6 +1,5 @@
 // Add coverage
-const findByExtension = require('../src/moduleSerializer').findByExtension;
-const splitAssetsByExtension = require('../src/moduleSerializer').splitAssetsByExtension;
+const { findByExtension, splitAssetsByExtension } = require('./helpers')
 
 describe('moduleSerializer', () => {
   describe('Find by extension', () => {
